@@ -58,7 +58,7 @@ class EmaCrossoverStrategy(Strategy):
                 self.sell(size=0.999)
 
 # Reads historical price data into a dataframe with the datetimes as the indices
-df = pd.read_csv("archive/btc_1d_data_2018_to_2025.csv", parse_dates=["Open time"], index_col="Open time")
+df = pd.read_csv("data/btc_1d_data_2018_to_2025.csv", parse_dates=["Open time"], index_col="Open time")
 df = df[~df.index.isna()] # Cleans data of any rows w/ missing timestamp
 df = df.sort_index() # Ensures data is chronological
 
