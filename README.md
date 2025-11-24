@@ -36,21 +36,37 @@ Rules:
 ## Repository Structure
 
 backtester/
+
 │
+
 └──BTC_MA_Cross/
+
    │
+   
    ├── data/                         # Historical BTC OHLCV datasets
+   
    │   ├── btc_1d_data_2018_to_2025.csv
+   
    │   ├── btc_1h_data_2018_to_2025.csv
+   
    │   ├── btc_4h_data_2018_to_2025.csv
+   
    │   └── btc_15m_data_2018_to_2025.csv
+   
    │
+   
    ├── results/                      # Backtest's trade log
+   
    │   └── trades_executed.csv       
+   
    │
+   
    ├── src/                          # Backtester implementation
+   
    │   └── main.py                   
+   
    │
+   
    └── .gitignore
 
 ---
