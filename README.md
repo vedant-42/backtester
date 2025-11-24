@@ -53,8 +53,11 @@ backtester/
 ## Tech Stack
 
 Python 3.9+
+
 pandas - data handling
+
 matplotlib - visualization
+
 backtesting.py - event-driven backtesting engine
 
 ---
@@ -62,7 +65,9 @@ backtesting.py - event-driven backtesting engine
 ## Installation & Setup
 
 git clone https://github.com/vedant-42/backtester.git
+
 cd backtester
+
 pip install pandas matplotlib backtesting
 
 ---
@@ -70,9 +75,11 @@ pip install pandas matplotlib backtesting
 ## Running the Backtest
 
 cd BTC_MA_Cross/src
+
 python3 main.py
 
 The script will:
+
 1) Load BTC's historical 1D price action from data/btc_1d_data_2018_to_2025.csv
 2) Execute the EMA crossover strategy
 3) Apply 0.2% commissions per transaction
