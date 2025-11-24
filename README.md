@@ -119,4 +119,6 @@ Calmar Ratio - 1.38: Strategy consistently compounded relative to its worst hist
 
 ## Authored by
 
-Vedant Narayan for educational and quantitative research purposes; I wouldn't recommend mortgaging your house to go all in on this
+Vedant Narayan 
+
+For educational and quantitative research purposes; I wouldn't recommend mortgaging your house to go all in on this
