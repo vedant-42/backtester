@@ -58,7 +58,7 @@ class EmaCrossoverStrategy(Strategy):
                 self.sell(size=0.999)
 
 # Reads historical price data into a dataframe with the datetimes as the indices
-df = pd.read_csv("data/btc_1d_data_2018_to_2025.csv", parse_dates=["Open time"], index_col="Open time")
+df = pd.read_csv("../data/btc_1d_data_2018_to_2025.csv", parse_dates=["Open time"], index_col="Open time")
 df = df[~df.index.isna()] # Cleans data of any rows w/ missing timestamp
 df = df.sort_index() # Ensures data is chronological
 
@@ -76,8 +76,8 @@ print(stats)
 # Extracts the exit, entry, and timestamp of each trade
 trades_df = stats['_trades']
 
-# Saves the trade data to a csv and saves it to the current directory
-trades_df.to_csv('trades_executed.csv', index=False)
+# Saves the trade data to a csv and saves it to the results directory
+trades_df.to_csv('../results/trades_executed.csv', index=False)
 
 # Gets strategy's capital over time
 equity_df = stats['_equity_curve']
