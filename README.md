@@ -78,9 +78,10 @@ cd BTC_MA_Cross/src
 
 python3 main.py
 
+---
 
+## The script will:
 
-The script will:
 1) Load BTC's historical 1D price action from data/btc_1d_data_2018_to_2025.csv
 2) Execute the EMA crossover strategy
 3) Apply 0.2% commissions per transaction
