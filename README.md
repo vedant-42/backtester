@@ -93,17 +93,17 @@ python3 main.py
 
 ## Relevant Stats
 
-Sharpe Ratio - 0.71: Indicates smoother risk-adjusted returns relative to buying and holding BTC; higher returns and decreased volatility
+Sharpe Ratio - 0.72: Indicates smoother risk-adjusted returns relative to buying and holding BTC; higher returns and decreased volatility
 
-Sortino Ratio - 1.84, Profit Factor - 10.54: Demonstrates limited downside volatility and asymmetric returns
+Sortino Ratio - 1.91, Profit Factor - 9.66: Demonstrates limited downside volatility and asymmetric returns
 
-Beta - 0.07: Low linear correlation to BTC due to flipping directional bias (rather than true market neutrality)
+Beta - 0.06: Low linear correlation to BTC due to flipping directional bias (rather than true market neutrality)
 
-CAGR (Compounded Annual Growth Rate) - 51.46%: Increased annualized returns relative to BTC due to effective directional trading
+CAGR (Compounded Annual Growth Rate) - 53.33%: Increased annualized returns relative to BTC due to effective directional trading
 
-Max Drawdown - 37.37%: Caused by chop/whipsaw rather than the deep pullbacks of BTC; consistent with low beta and evident in equity curve
+Max Drawdown - 37.4%: Caused by chop/whipsaw rather than the deep pullbacks of BTC; consistent with low beta and evident in equity curve
 
-Calmar Ratio - 1.38: Strategy consistently compounded relative to its worst historical drawdown, indicating sustainable performance
+Calmar Ratio - 1.43: Strategy consistently compounded relative to its worst historical drawdown, indicating sustainable performance
 
 ---
 
