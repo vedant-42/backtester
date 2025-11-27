@@ -7,9 +7,9 @@ from backtesting.lib import crossover
 # Uses pandas' estimated weighted moving average function to create bands
 def EMA(
     values, # Dataframe of price data
-    n # Length/period of MA
+    n # Length/period of EMA
 ):
-    # Returns series of MA data - same size as input price series
+    # Returns series of EMA data - same size as input price series
     return pd.Series(values).ewm(span=n, adjust=False).mean()
 
 class EmaCrossoverStrategy(Strategy):
@@ -23,15 +23,15 @@ class EmaCrossoverStrategy(Strategy):
         self.ema_slow = self.I(EMA, self.data.Close, self.slow_n)
         self.trend_support = self.I(EMA, self.data.Close, self.confluence)
 
-    # Runs on each bar of price data
+    # Runs backtest on each bar of price data
     def next(self):
-        # Trend confirmation - ensures price is above/below 200 MA for long/short
+        # Trend confirmation: ensures price is above/below 50W MA for long/short
         price = self.data.Close[-1]
         trend = self.trend_support[-1]
         in_uptrend = price > trend
         in_downtrend = price < trend
         
-        # Closes positions early (hopefully) if price breaks through trend support
+        # Closes positions early if price breaks through trend support
         if not in_uptrend and self.position.is_long:
             self.position.close()
         elif not in_downtrend and self.position.is_short:
@@ -44,7 +44,7 @@ class EmaCrossoverStrategy(Strategy):
                 self.position.close()
 
             # Executes position entry
-            if in_uptrend and not self.position.is_long:
+            if not self.position.is_long:
                 self.buy(size=0.999)  # size = 100% of account capital
 
         # Go short if bands cross bearishly
@@ -54,7 +54,7 @@ class EmaCrossoverStrategy(Strategy):
                 self.position.close()
             
             # Executes position entry
-            if in_downtrend and not self.position.is_short:
+            if not self.position.is_short:
                 self.sell(size=0.999)
 
 # Reads historical price data into a dataframe with the datetimes as the indices
